@@ -1,5 +1,5 @@
 import fileinput
-
+ 
 numbers = []
 
 for line in fileinput.input():
