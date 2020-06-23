@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="base.css") }}">
+</head>
+<body>
+
+	<div class="logo-header">
+		<img src="{{ url_for("static", filename="logo.png")}}" alt="Logo">
+	</div>
+
+	<div class="back">
+	    <ul id="menu">
+	        <li><a href="{{ url_for('index') }}">Home</a></li>
+
+	        {% if current_user.is_anonymous %}
+	            <li><a href="{{ url_for('login') }}">Sign in</a></li>
+				{% else %}
+	            <li><a href="{{ url_for('post_form') }}">New sale</a></li>
+
+	            {% if current_user.is_admin%}
+				<li><a href="{{ url_for('post_read') }}">Go to Sales</a></li>
+				<li><a href="{{ url_for('show_signup_form') }}">Sign up new Seller</a></li>
+                <li><a href="{{ url_for('deleteUser') }}">Delete Seller</a></li>
+	            {% endif%}
+
+	            <li><a href="{{ url_for('logout') }}">Sign out</a></li>
+	            <li><a> {{ current_user.name }} </a></li>
+
+	        {% endif %}
+	    </ul>
+	</div>
+	{% block content %}{% endblock %}
+</body>
+</html>

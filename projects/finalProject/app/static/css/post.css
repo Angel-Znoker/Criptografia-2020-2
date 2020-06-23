@@ -1,0 +1,33 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.product-form {
+    padding: 5% 15%;
+}
+
+.product-form label {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.card {
+   margin: 3% 0 0;
+}
+
+.card-header {
+    background-color: #2175bc;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+#sellers p {
+    display: inline-block;
+    margin: 1%;
+}
+
+.userName {
+    font-weight: 700;
+}

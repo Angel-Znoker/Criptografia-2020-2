@@ -1,0 +1,23 @@
+{% extends "base_template.html" %}
+{% block title %}Registro de Ventas{% endblock %}
+{% block content %}
+	<section class="container section">
+		<h1>Sales Record</h1>
+		{% for post in posts %}
+		<div class="post_box">
+			<div class="post_box-header">
+				<h3 class="name-header">Seller: {{post.author}}</h3>
+				<p class="post_box-subtitle">Date: <i>{{readable_time(post.timestamp)}}</i></p>
+			</div>
+			<div>
+				<div class="post_box-body">
+					{% for product in post.products %}
+					<p>Product: {{product.product}}, Price: ${{product.price}}</p>
+					{% endfor %}
+					<p id="total">Total: ${{post.total}}</p>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</section>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base_post_template.html" %}
+{% block title %}
+    New Sale
+{% endblock %}
+{% block content %}
+    <!-- <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.total.label }}
+            {{ form.total(size=128) }}<br>
+            {% for error in form.total.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div>
+            {{ form.content.label }}
+            {{ form.content }}<br>
+            {% for error in form.content.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+
+    </form> -->
+
+    <div class="row">
+		<div class="col-12">
+			<div class="product-form">
+				<form id="products">
+					<button class="btn btn-info float-right" type="submit">Finalize purchase</button>
+					<div class="form-group row">
+						<label for="staticUser" class="col-sm-2 col-form-label">Seller:</label>
+						<div class="col-sm-10">
+							<input type="text" readonly class="form-control-plaintext" id="staticUser" value="{{ current_user.name }}">
+						</div>
+					</div>
+				</form>
+				<button type="button" class="btn btn-info float-right" id="new-Product">New Product</button>
+			</div>
+		</div>
+	</div>
+{% endblock %}
